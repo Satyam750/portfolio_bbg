@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Intro from './_sections/intro'
 import FristThingsFirst from './_sections/first-things-first'
 import HighlightedProject from './_sections/highlighted-project'
@@ -15,7 +15,9 @@ const page = async({searchParams}:{
       <Intro/>
       <FristThingsFirst/>
     </div>
+    <Suspense fallback={<div className="loader"></div>}>
     <HighlightedProject/>
+    </Suspense>
     <Contact/>
     {params?.modal === "journey" && <JourneyModal />}
    </main>
