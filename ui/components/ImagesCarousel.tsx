@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 type ImagesCarouselProps = {
   items: {
@@ -28,14 +29,17 @@ export function ImagesCarousel(props: ImagesCarouselProps) {
           className="bg-[#060CFF] h-[220px] min-w-[300px] md:h-[400px] md:min-w-[500px] lg:h-[600px] lg:min-w-[900px] snap-start rounded-lg overflow-hidden relative"
         >
           <picture>
+          <Suspense fallback={<div className="loader"></div>}>
             <Image
               src={item.imageSrc}
               alt={item.label}
               width={900}
               height={600}
+              priority
               sizes="(min-width: 1024px) 900px, 300px"
               className="w-full h-full object-contain"
             />
+              </Suspense>
           </picture>
         </Link>
       ))}

@@ -5,8 +5,6 @@ import { ImagesCarousel } from '@/ui/components/ImagesCarousel'
 import { RegularSection } from '@/ui/components/RegularSection'
 import { featuresList } from "@/public/projects/projects-list";
 import Link from 'next/link'
-import React from 'react'
-
 const HighlightedProject = () => {
   return (
     <>
@@ -30,10 +28,10 @@ const HighlightedProject = () => {
           Scroll Left For See Project
         </Typography>
         </RegularSection>
-
+        
         <ImagesCarousel items={featuresList} />
-
-        <RegularSection>
+      
+          <RegularSection>
            <Typography variant="h2" className="text-white mb-3">
           Role
         </Typography>
